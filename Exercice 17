@@ -1,0 +1,17 @@
+def palindrome(chaine):
+    chaine = chaine.lower()#passage de la chaine en minuscule
+    i = 0
+    longueur = len(chaine)#len pemmet d'avoir la longueur de la chaîne
+
+    while i < longueur: #compare la première et dernière lettre en revenant ainsi de suite vers le milieu du mot
+        if chaine[i] != chaine[-i - 1]:
+            return False #Si deux lettre sont différente les conditions ne sont pas respecté et la def renvoie False
+        i += 1
+    return True #Si toutes les lettres sont semblable, les conditions sont respecté et la def renvoie True
+
+chaine=str(input("entrez un mot pour savoir si celui-ci est palindrome :"))
+
+if palindrome(chaine) == True:
+    print("Palindrome.")
+else:
+    print("Pas palindrome.")
