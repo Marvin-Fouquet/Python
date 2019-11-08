@@ -1,0 +1,68 @@
+def test_adnA (brin1, brin2):
+    CodeA = "CCTGGAGGGTGGCCCCACCGGCCGAGACAGCGAGCATATGCAGGAAGCGGCAGGAATAAGGAAAAGCAGCADN"
+    compteCodeA = 0
+    brin1 = brin1.upper()#passage des brins en majuscule
+    brin2 = brin2.upper()
+
+    if CodeA.find(brin1) > 0: #l'invocation find chercher le brin 1 dans le code et donne sa position
+        compteCodeA = compteCodeA +1
+
+    if CodeA.find(brin2) > 0: #l'invocation find chercher le brin 2 dans le code et donne sa position
+        compteCodeA = compteCodeA +1
+    return compteCodeA
+#La fonction find renvoie la position du brin donc spérieur à 0 ou  -1 si pas trouver. Le compteur permet d'enregistrer que Find à trouver le brin et comme nous avon deux brin, la valeur max sera 2
+def test_adnB(brin1, brin2):
+    CodeB = "CTCCTGATGCTCCTCGCTTGGTGGTTTGAGTGGACCTCCCAGGCCAGTGCCGGGCCCCTCATAGGAGAGGADN"
+    compteCodeB = 0
+    brin1 = brin1.upper()
+    brin2 = brin2.upper()
+
+    if CodeB.find(brin1) > 0:
+        compteCodeB = compteCodeB + 1
+
+    if CodeB.find(brin2) > 0:
+        compteCodeB = compteCodeB + 1
+    return compteCodeB
+
+def test_adnC(brin1, brin2):
+    CodeC = "AAGCTCGGGAGGTGGCCAGGCGGCAGGAAGGCGCACCCCCCCAGTACTCCGCGCGCCGGGACAGAATGCCADN"
+    compteCodeC = 0
+    brin1 = brin1.upper()
+    brin2 = brin2.upper()
+
+    if CodeC.find(brin1) > 0:
+        compteCodeC = compteCodeC + 1
+
+    if CodeC.find(brin2) > 0:
+        compteCodeC = compteCodeC + 1
+    return compteCodeC
+
+def test_adnD(brin1, brin2):
+    CodeD = "CTGCAGGAACTTCTTCTGGAAGTACTTCTCCTCCTGCAAATAAAACCTCACCCATGAATGCTCACGCAAGADN"
+    compteCodeD = 0
+    brin1 = brin1.upper()
+    brin2 = brin2.upper()
+
+    if CodeD.find(brin1) > 0:
+        compteCodeD = compteCodeD + 1
+
+    if CodeD.find(brin2) > 0:
+        compteCodeD = compteCodeD + 1
+    return compteCodeD
+
+
+print("Choisissez 2 morceau de brin d'ADN pour touvrez le coupable")
+brin1=str(input("premier brin :"))
+brin2=str(input("Deuxième brin :"))
+
+#Nous testons chaque code ADN et si la def renvoie 2 c'est que le programme a trouver les deux brin dans le code et donc le coupable. Sinon personne n'est coupable.
+if test_adnA(brin1,brin2) ==2:
+    print("Le coupable est le Colonel Moutarde")
+elif test_adnB(brin1,brin2)==2:
+    print("Le coupable est Mlle Rose")
+elif test_adnC(brin1, brin2) ==2:
+    print("Le coupable est Mme Pervenche")
+elif test_adnD(brin1,brin2) ==2:
+    print("Le coupable est M.Leblanc")
+else:
+    print("personne n'est coupable")
