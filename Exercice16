@@ -1,0 +1,26 @@
+def longueur(mot1,mot2): #regarde si la longueur des mots est la même
+    dis1 = len(mot1)
+    dis2 = len(mot2)
+    if dis1 == dis2:
+        return True
+    else:
+        return False
+
+def distance_hamming(mot1,mot2):
+    mot1 = mot1.lower() #Met le mot 1 en minuscule
+    mot2 = mot2.lower() #Met le mot 2 en minuscule
+    compte = 0
+    lettre = 0
+    while compte < len(mot1): #compare chaque lettre une à une de chaque mot et rajoute +1 si elles sont différentes
+        if mot1[compte] != mot2[compte]:
+            lettre = lettre + 1
+        compte = compte + 1
+    return lettre
+print("Choisissez 2 mots de même longueur")
+mot1=str(input("premier mot :"))
+mot2=str(input("Deuxième mot :"))
+
+if longueur(mot1,mot2) == True:
+    print("La distance de Hamming est de " + str(distance_hamming(mot1,mot2)))
+elif longueur(mot1,mot2) == False:
+    print("Les deux mots ne sont pas de la même longueur !")
