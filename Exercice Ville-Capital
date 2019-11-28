@@ -1,0 +1,58 @@
+class Ville:
+    def __init__(self,n,h):
+        self.nom = n
+        self.habitant = h
+    def set__nom(self, n):
+        self.nom = n
+    def set__habitant(self,h):
+        h=input("Entrez le nombre d'habitant")
+        self.habitant = h
+    def get__nom(self):
+        return self.nom
+    def get__habitant(self):
+        return self.habitant
+    def __str__(self):
+        return "Ville :" + str(self.nom) + " Habitant :" + str(self.habitant)
+    def nbhabitant(n):
+        if n == 0:
+            return False
+        elif n > 0:
+            return True
+    def categorie(self):
+        if self.habitant < 500000 and self.habitant !=0:
+            return "Catégorie de la ville de " + self.nom + " : A"
+        elif self.habitant >= 500000:
+            return "Catégorie de la ville de " + self.nom + " : B"
+        elif self.habitant == 0:
+            return "Catégorie de la ville de " + self.nom + " : ?"
+
+class Capital(Ville):
+    def __init__(self,n,p,h):
+        Ville.__init__(self,n,h)
+        self.pays = p
+    def set__nom(self, n):
+        Ville.set__nom(self,n)
+    def set__habitant(self,h):
+        Ville.set__habitant(self)
+    def set__pays(self,p):
+        self.pays = p
+    def get__nom(self):
+        Ville.get__nom(self)
+    def get__habitant(self):
+        Ville.get__habitant(self)
+    def get__pays(self):
+        return self.pays
+    def __str__(self):
+        return Ville.__str__(self) + " Capital de " + self.pays
+    def categorie(self):
+        if self.pays != "":
+            return"Catégorie de la ville de " + self.nom + " : C"
+        else:
+            Ville.categorie(self)
+
+ville1=Ville("Cergy",0)
+capital1=Capital("Paris","France",2181371)
+
+print(ville1.__str__())
+print(capital1.__str__())
+print(capital1.categorie())
